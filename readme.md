@@ -2,8 +2,6 @@
 
 <img src="https://img.shields.io/badge/Vanilla-JavaScript-yellow.svg" alt="Vanilla JS">
 
-Fork del repo [QuantumCatgirl/js_humanizar_lapso](https://github.com/QuantumCatgirl/js_humanizar_lapso) traducido al español.
-
 La función **humanizar_lapso(fecha)** devuelve la diferencia entre dos fechas de una manera más agradable para ser usada en el navegador.
 
 <p align="center">
@@ -82,3 +80,6 @@ the default time units are:
     [60, 'minutes'],
     [1, 'seconds']
     
+## Créditos
+
+Versión original (inglés) [QuantumCatgirl/js_humanizar_lapso](https://github.com/QuantumCatgirl/js_humanized_time_span).

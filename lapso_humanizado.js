@@ -1,44 +1,21 @@
-// Copyright (C) 2011 by Will Tomlins
-// 
-// Github profile: http://github.com/layam
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
-
-function humanized_time_span(date, ref_date, date_formats, time_units) {
+function humanizar_lapso(date, ref_date, date_formats, time_units) {
   //Date Formats must be be ordered smallest -> largest and must end in a format with ceiling of null
   date_formats = date_formats || {
     past: [
-      { ceiling: 60, text: "$seconds seconds ago" },
-      { ceiling: 3600, text: "$minutes minutes ago" },
-      { ceiling: 86400, text: "$hours hours ago" },
-      { ceiling: 2629744, text: "$days days ago" },
-      { ceiling: 31556926, text: "$months months ago" },
-      { ceiling: null, text: "$years years ago" }      
+      { ceiling: 60, text: "hace $seconds segundos" },
+      { ceiling: 3600, text: "hace $minutes minutos" },
+      { ceiling: 86400, text: "hace $hours horas" },
+      { ceiling: 2629744, text: "hace $days días" },
+      { ceiling: 31556926, text: "hace $months meses" },
+      { ceiling: null, text: "hace $years años" }      
     ],
     future: [
-      { ceiling: 60, text: "in $seconds seconds" },
-      { ceiling: 3600, text: "in $minutes minutes" },
-      { ceiling: 86400, text: "in $hours hours" },
-      { ceiling: 2629744, text: "in $days days" },
-      { ceiling: 31556926, text: "in $months months" },
-      { ceiling: null, text: "in $years years" }
+      { ceiling: 60, text: "en $seconds segundos" },
+      { ceiling: 3600, text: "en $minutes minutos" },
+      { ceiling: 86400, text: "en $hours horas" },
+      { ceiling: 2629744, text: "en $days días" },
+      { ceiling: 31556926, text: "en $months meses" },
+      { ceiling: null, text: "en $years años" }
     ]
   };
   //Time units must be be ordered largest -> smallest

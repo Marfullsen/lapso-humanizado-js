@@ -83,3 +83,5 @@ the default time units are:
 ## Créditos
 
 Versión original (inglés) [QuantumCatgirl/js_humanizar_lapso](https://github.com/QuantumCatgirl/js_humanized_time_span).
+
+[How to format time since xxx e.g. “4 minutes ago” similar to Stack Exchange sites](https://stackoverflow.com/a/5965935/15466047)

@@ -4,26 +4,29 @@
 
 Fork del repo [QuantumCatgirl/js_humanizar_lapso](https://github.com/QuantumCatgirl/js_humanizar_lapso) traducido al español.
 
-"humanizar_lapso(fecha)" returns the difference between two Dates as a nice, human string for use in the browser.
+La función **humanizar_lapso(fecha)** devuelve la diferencia entre dos fechas de una manera más agradable para ser usada en el navegador.
 
-<img src=".\docs\img\testing_humanizar_lapso_dev_tools.png" alt="Testing_with_dev_tools">
+<p align="center">
+  <a href="./lapso_humanizado.js" rel="noopener">
+ <img src=".\docs\img\testing_humanizar_lapso_dev_tools.png" alt="Testing_with_dev_tools">
+</p>
 
-## usage
+## ¿Cómo se utiliza la función?
 
-Include the script (it's native JS so doesn't require anything else) and you're ready to go.
+Incluye el script **lapso_humanizado.js** en tu proyecto y la función estará lista para ser usada.
 
-### Syntax
+### Sintaxis
     humanizar_lapso(date, ref_date, date_formats, time_units)
   
-Only date is required.
+**Sólo se requiere el parámetro _date_**
 
-### Examples
+### Ejemplos
 
-    humanizar_lapso("2010/09/10 10:00:00") => "3 days ago" (using now as a reference)
+    humanizar_lapso("2010/09/10 10:00:00") => "Hace 3 días" (usando el momento actual como referencia.)
   
-    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 12:00:00") => "2 hours ago"
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 12:00:00") => "hace 2 horas"
 
-### Customisation
+### Personalizar
 
 Custom date formats can be set as follows:
 

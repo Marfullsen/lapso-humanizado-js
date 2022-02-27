@@ -1,28 +1,29 @@
-Lapso Humanizado JS
-===========
+# Lapso Humanizado JS
 
-Fork del repo [QuantumCatgirl/js_humanized_time_span](https://github.com/QuantumCatgirl/js_humanized_time_span) traducido al español.
+<img src="https://img.shields.io/badge/Vanilla-JavaScript-yellow.svg" alt="Vanilla JS">
 
-humanized_time_span returns the difference between two Dates as a nice, human string for use in the browser.
+Fork del repo [QuantumCatgirl/js_humanizar_lapso](https://github.com/QuantumCatgirl/js_humanizar_lapso) traducido al español.
 
+"humanizar_lapso(fecha)" returns the difference between two Dates as a nice, human string for use in the browser.
 
-usage
------
+<img src=".\docs\img\testing_humanizar_lapso_dev_tools.png" alt="Testing_with_dev_tools">
+
+## usage
 
 Include the script (it's native JS so doesn't require anything else) and you're ready to go.
 
-###Syntax
-    humanized_time_span(date, ref_date, date_formats, time_units)
+### Syntax
+    humanizar_lapso(date, ref_date, date_formats, time_units)
   
 Only date is required.
 
-###Examples
+### Examples
 
-    humanized_time_span("2010/09/10 10:00:00") => "3 days ago" (using now as a reference)
+    humanizar_lapso("2010/09/10 10:00:00") => "3 days ago" (using now as a reference)
   
-    humanized_time_span("2010/09/10 10:00:00", "2010/09/10 12:00:00") => "2 hours ago"
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 12:00:00") => "2 hours ago"
 
-###Customisation
+### Customisation
 
 Custom date formats can be set as follows:
 
@@ -39,11 +40,11 @@ Custom date formats can be set as follows:
       ]
     }
     
-    humanized_time_span("2010/09/10 10:00:00", "2010/09/10 10:00:05", custom_date_formats) 
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 10:00:05", custom_date_formats) 
       => "less than a minute ago"
-    humanized_time_span("2010/09/10 10:00:00", "2010/09/10 17:01:25", custom_date_formats) 
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 17:01:25", custom_date_formats) 
       => "5 hours, 1 minute and 25 seconds ago"
-    humanized_time_span("2010/09/10 10:00:00", "2012/09/10 10:00:00", custom_date_formats) 
+    humanizar_lapso("2010/09/10 10:00:00", "2012/09/10 10:00:00", custom_date_formats) 
       => "in 2 years"
 
 Here the date format's ceiling is in seconds. Formats are walked through until one is reached where the ceiling is more than the difference between the two times or is null.

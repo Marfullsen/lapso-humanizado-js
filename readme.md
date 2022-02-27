@@ -1,5 +1,7 @@
-humanized_time_span
+Lapso Humanizado JS
 ===========
+
+Fork del repo [QuantumCatgirl/js_humanized_time_span](https://github.com/QuantumCatgirl/js_humanized_time_span) traducido al español.
 
 humanized_time_span returns the difference between two Dates as a nice, human string for use in the browser.
 

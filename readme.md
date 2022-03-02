@@ -26,27 +26,54 @@ Incluye el script **lapso_humanizado.js** en tu proyecto y la función estará l
 
 ### Personalizar
 
-Custom date formats can be set as follows:
+Los formatos personalizados de fecha pueden ser ajustados de la siguiente manera:
 
-    var custom_date_formats = {
+    var formato_personalizado_de_fecha = {
       past: [
-        { ceiling: 60, text: "less than a minute ago" },
-        { ceiling: 86400, text: "$hours hours, $minutes minutes and $seconds seconds ago" },
-        { ceiling: null, text: "$years years ago" }
+        { ceiling: 60, text: "Hace menos de un minuto" },
+        { ceiling: 86400, text: "hace $hours horas, $minutes minutos y $seconds segundos" },
+        { ceiling: null, text: "hace $years años" }
       ],
       future: [
-        { ceiling: 60, text: "in less than a minute" },
-        { ceiling: 86400, text: "in $hours hours, $minutes minutes and $seconds seconds time" },
-        { ceiling: null, text: "in $years years" }
+        { ceiling: 60, text: "en menos de un minuto" },
+        { ceiling: 86400, text: "en $hours horas, $minutes minutos y $seconds segundos" },
+        { ceiling: null, text: "en $years años" }
       ]
     }
     
-    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 10:00:05", custom_date_formats) 
-      => "less than a minute ago"
-    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 17:01:25", custom_date_formats) 
-      => "5 hours, 1 minute and 25 seconds ago"
-    humanizar_lapso("2010/09/10 10:00:00", "2012/09/10 10:00:00", custom_date_formats) 
-      => "in 2 years"
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 10:00:05", formato_personalizado_de_fecha) 
+      => "Hace menos de un minuto"
+    humanizar_lapso("2010/09/10 10:00:00", "2010/09/10 17:01:25", formato_personalizado_de_fecha) 
+      => "hace 5 horas, 1 minuto y 25 segundos"
+    humanizar_lapso("2010/09/10 10:00:00", "2012/09/10 10:00:00", formato_personalizado_de_fecha) 
+      => "en 2 años"
+
+#### Formato personalizado de Marfullsen
+
+``` 
+date_formats = date_formats || {
+  past: [
+    { ceiling: 60, text: "hace menos de un minuto" },
+    { ceiling: 120, text: "hace un minuto" },
+    { ceiling: 3600, text: "hace $minutes minutos" },
+    { ceiling: 7200, text: "hace una hora" },
+    { ceiling: 86400, text: "hace $hours horas" },
+    { ceiling: 172800, text: "hace un día" },
+    { ceiling: 2629744, text: "hace $days días" },
+    { ceiling: 5259488, text: "hace un mes" },
+    { ceiling: 31556926, text: "hace $months meses" },
+    { ceiling: null, text: "hace $years años" },
+  ],
+  future: [
+    { ceiling: 60, text: "en $seconds segundos" },
+    { ceiling: 3600, text: "en $minutes minutos" },
+    { ceiling: 86400, text: "en $hours horas" },
+    { ceiling: 2629744, text: "en $days días" },
+    { ceiling: 31556926, text: "en $months meses" },
+    { ceiling: null, text: "en $years años" },
+  ],
+};
+```
 
 Here the date format's ceiling is in seconds. Formats are walked through until one is reached where the ceiling is more than the difference between the two times or is null.
 
@@ -57,7 +84,7 @@ Variables in the format text should be prefixed with a $. eg. $xxx where xxx is 
 
 For those who live by different time rules, time_units can also be customised:
   
-    var custom_date_formats = [
+    var formato_personalizado_de_fecha = [
       { ceiling: null, text: "$moggles moggles, $tocks tocks and $ticks ticks ago" },
     ]
   
@@ -66,7 +93,7 @@ For those who live by different time rules, time_units can also be customised:
       [10, 'tocks'],
       [1, 'ticks']
     ]
-    time_ago("2010/01/01 00:00:00", "2010/01/01 00:00:53", custom_date_formats, custom_time_units) 
+    time_ago("2010/01/01 00:00:00", "2010/01/01 00:00:53", formato_personalizado_de_fecha, custom_time_units) 
       => "2 moggles, 1 tock and 3 ticks ago"
     
 Custom date formats will have to be used when using custom time_units.
